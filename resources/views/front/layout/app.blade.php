@@ -48,14 +48,23 @@
                             @endif
 
                             @if($global_page_data->checkout_status == 1)
-                            <li class="menu"><a href="">{{ $global_page_data->checkout_heading }}</a></li>
+                            <li class="menu"><a href="{{route('checkout')}}">{{ $global_page_data->checkout_heading }}</a></li>
                             @endif
 
-                            @if($global_page_data->signup_status == 1)
-                            <li class="menu"><a href="{{ route('customer_signup') }}">{{ $global_page_data->signup_heading }}</a></li>
-                            @endif
-                            @if($global_page_data->signin_status == 1)
-                            <li class="menu"><a href="{{ route('customer_login') }}">{{ $global_page_data->signin_heading }}</a></li>
+                            @if(!Auth::guard('customer')->check())
+
+                                @if($global_page_data->signup_status == 1)
+                                <li class="menu"><a href="{{ route('customer_signup') }}">{{ $global_page_data->signup_heading }}</a></li>
+                                @endif
+
+                                @if($global_page_data->signin_status == 1)
+                                <li class="menu"><a href="{{ route('customer_login') }}">{{ $global_page_data->signin_heading }}</a></li>
+                                @endif
+
+                            @else   
+
+                                <li class="menu"><a href="{{ route('customer_home') }}">Dashboard</a></li>
+
                             @endif
 
                             
@@ -135,7 +144,7 @@
                         <div class="item">
                             <h2 class="heading">Site Links</h2>
                             <ul class="useful-links">
-                                <li><a href="rooms.html">Rooms & Suites</a></li>
+                                <li><a href="{{route('room')}}">Rooms & Suites</a></li>
                                 <li><a href="{{route('photo_gallery')}}">Photo Gallery</a></li>
                                 <li><a href="{{route('about')}}">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -146,7 +155,7 @@
                         <div class="item">
                             <h2 class="heading">Useful Links</h2>
                             <ul class="useful-links">
-                                <li><a href={{route('home')}}>Home</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
                                 <li><a href="{{route('terms_and_conditions')}}">Terms and Conditions</a></li>
                                 <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
                                 <li><a href="{{route('faq')}}">FAQ</a></li>

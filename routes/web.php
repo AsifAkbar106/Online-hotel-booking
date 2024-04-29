@@ -29,7 +29,6 @@ use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 
 
-
 /*front */
 Route::get('/',[HomeController::class,'index'])->name('home'); 
 Route::get('/about',[AboutController::class,'index'])->name('about');
@@ -42,6 +41,10 @@ Route::get('/room',[RoomController::class,'index'])->name('room');
 Route::post('/booking/submit', [BookingController::class, 'cart_submit'])->name('cart_submit');
 Route::get('/cart', [BookingController::class, 'cart_view'])->name('cart');
 Route::get('/cart/delete/{id}', [BookingController::class, 'cart_delete'])->name('cart_delete');
+Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
+Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
+Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
+
 
 
     

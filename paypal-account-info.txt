@@ -1,0 +1,22 @@
+Developer Account:
+Email:onlinehotelbooking@gmail.com
+Password:ZT*fzn@AGS4$79R
+
+
+Sandbox - Personal:
+hotel-sandbox@personal.com
+Password:ZT*fzn@AGS4$79R
+
+
+Sandbox - Business:
+hotel-sandbox@business.com
+Password:ZT*fzn@AGS4$79R
+
+
+API Credential:
+APP Name:HOTEL_APP_NEW
+hotel-sandbox@business.com
+Client ID:AcieZ8zNUm_YhlDUpz_AT3CR0HwRoaxAd_A3k23FOBatq-m_m091NzYUgQD1kaFFta0XFpVgFkpWtXXp
+Secret Key:ECYYBp0kwOglAT7tyadJzH1AtuuMH0gCIhYpRn_RZ54CEVJyEZlk3uzYLFfIeu_fdQvvt-EuiN9cxaxr
+
+
