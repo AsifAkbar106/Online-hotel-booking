@@ -1,0 +1,9 @@
+Publishable key
+pk_test_51PAwc2P7QRnEd18G0NA4sulMAcKmCXqUj5f89OPMWwQmmuAWEgtANsK2V6cjqVw8udtWwEEBbwj8Qj1g6Xl3hQzr00IBiWMjS5
+
+
+Secret Key
+sk_test_51PAwc2P7QRnEd18GkykjRtD1gs3yIT8ROUhhbKnuJcIUgN4rRCqf5pzyQN5ZLQwLDhjM101ofjoqHvcZAi7HBn3g00Vt3AH8wE
+
+Stripe Test Card
+4242 4242 4242 4242

@@ -22,11 +22,14 @@ use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminRoomController;
+use App\Http\Controllers\Admin\AdminCustomerController;
+use App\Http\Controllers\Admin\AdminOrderController;
 
 
 use App\Http\Controllers\Customer\CustomerHomeController;
 use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Customer\CustomerProfileController;
+use App\Http\Controllers\Customer\CustomerOrderController;
 
 
 /*front */
@@ -44,6 +47,7 @@ Route::get('/cart/delete/{id}', [BookingController::class, 'cart_delete'])->name
 Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
 Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
 Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
+Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->name('stripe');
 
 
 
@@ -75,15 +79,27 @@ Route::group(['middleware' => ['customer:customer']], function (){
     Route::get('/customer/home', [CustomerHomeController::class, 'index'])->name('customer_home'); 
     Route::get('/customer/edit-profile', [CustomerProfileController::class, 'index'])->name('customer_profile');
     Route::post('/customer/edit-profile-submit', [CustomerProfileController::class, 'profile_submit'])->name('customer_profile_submit');
+    Route::get('/customer/order/view', [CustomerOrderController::class, 'index'])->name('customer_order_view');
+    Route::get('/customer/order/invoice/{id}', [CustomerOrderController::class, 'invoice'])->name('customer_invoice');
 });
 
 /*Admin Middleware */
-Route::group(['middleware' => ['admin:admin']], function (){
+    Route::group(['middleware' => ['admin:admin']], function (){
 
 
     Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
     Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home'); 
     Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
+
+    /*Customers */
+    Route::get('/admin/customer', [AdminCustomerController::class, 'index'])->name('admin_customer');
+    Route::get('/admin/customer/change-status/{id}', [AdminCustomerController::class, 'change_status'])->name('admin_customer_change_status');
+    /*Orders */
+    Route::get('/admin/order/view', [AdminOrderController::class, 'index'])->name('admin_order_view');
+    Route::get('/admin/order/invoice/{id}', [AdminOrderController::class, 'invoice'])->name('admin_invoice');
+    Route::get('/admin/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('admin_order_delete');
+
+
 
     /*Slides */
     Route::get('/admin/slide/view', [AdminSlideController::class, 'index'])->name('admin_slide_view');

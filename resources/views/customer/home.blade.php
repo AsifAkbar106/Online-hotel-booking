@@ -14,7 +14,7 @@
                     <h4>Completed Orders</h4>
                 </div>
                 <div class="card-body">
-                    12
+                    {{$total_completed_orders}}
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     <h4>Pending Orders</h4>
                 </div>
                 <div class="card-body">
-                    122
+                    {{$total_pending_orders}}
                 </div>
             </div>
         </div>

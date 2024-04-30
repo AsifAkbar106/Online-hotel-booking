@@ -32,13 +32,15 @@
                 </ul>
             </li>
             
+            <li class="{{Request::is('admin/customers') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_customer') }}"><i class="fa fa-hand-o-right"></i> <span>Customers</span></a></li>
+            <li class="{{Request::is('admin/order/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-hand-o-right"></i> <span>Orders</span></a></li>
 
-            <li class=""><a class="nav-link" href="{{ route('admin_slide_view') }}"><i class="fa fa-hand-o-right"></i> <span>Slides</span></a></li>
+            <li class="{{Request::is('admin/slide/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_slide_view') }}"><i class="fa fa-hand-o-right"></i> <span>Slides</span></a></li>
 
-            <li class=""><a class="nav-link" href="{{ route('admin_feature_view') }}"><i class="fa fa-hand-o-right"></i> <span>Features</span></a></li>
+            <li class="{{Request::is('admin/feature/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_feature_view') }}"><i class="fa fa-hand-o-right"></i> <span>Features</span></a></li>
             
-            <li class=""><a class="nav-link" href="{{ route('admin_photo_view') }}"><i class="fa fa-hand-o-right"></i> <span>Photo Gallery</span></a></li>
-            <li class=""><a class="nav-link" href="{{ route('admin_faq_view') }}"><i class="fa fa-hand-o-right"></i> <span>FAQ</span></a></li>
+            <li class="{{Request::is('admin/photo/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_photo_view') }}"><i class="fa fa-hand-o-right"></i> <span>Photo Gallery</span></a></li>
+            <li class="{{Request::is('admin/faq/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_faq_view') }}"><i class="fa fa-hand-o-right"></i> <span>FAQ</span></a></li>
 
         </ul>
     </aside>
