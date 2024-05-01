@@ -10,7 +10,7 @@
         <ul class="sidebar-menu">
 
             <li class="{{Request::is('admin/home') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin_home')}}"><i class="fa fa-hand-o-right"></i> <span>Dashboard</span></a></li>
-
+            <li class="{{Request::is('admin/setting') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin_setting')}}"><i class="fa fa-hand-o-right"></i> <span>Setting</span></a></li>
             <li class="nav-item dropdown {{Request::is('admin/amenity/view')||Request::is('admin/room/view')  ? 'active' : ''}}">
                 <a href="#" class="nav-link has-dropdown"><i class="fa fa-hand-o-right"></i><span>Room Section</span></a>
                 <ul class="dropdown-menu">
@@ -38,6 +38,8 @@
             <li class="{{Request::is('admin/slide/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_slide_view') }}"><i class="fa fa-hand-o-right"></i> <span>Slides</span></a></li>
 
             <li class="{{Request::is('admin/feature/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_feature_view') }}"><i class="fa fa-hand-o-right"></i> <span>Features</span></a></li>
+            <li class="{{Request::is('admin/testimonial/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_testimonial_view') }}"><i class="fa fa-hand-o-right"></i> <span>Testimonials</span></a></li>
+            <li class="{{Request::is('admin/post/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_post_view') }}"><i class="fa fa-hand-o-right"></i> <span>Posts</span></a></li>
             
             <li class="{{Request::is('admin/photo/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_photo_view') }}"><i class="fa fa-hand-o-right"></i> <span>Photo Gallery</span></a></li>
             <li class="{{Request::is('admin/faq/*') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin_faq_view') }}"><i class="fa fa-hand-o-right"></i> <span>FAQ</span></a></li>

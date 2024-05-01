@@ -10,7 +10,7 @@ use App\Http\Controllers\Front\TermsController;
 use App\Http\Controllers\Front\PrivacyController;
 use App\Http\Controllers\Front\RoomController;
 use App\Http\Controllers\Front\BookingController;
-
+use App\Http\Controllers\Front\BlogController;
 
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
@@ -24,6 +24,9 @@ use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminCustomerController;
 use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminTestimonialController;
+use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminSettingController;  
 
 
 use App\Http\Controllers\Customer\CustomerHomeController;
@@ -38,6 +41,9 @@ Route::get('/about',[AboutController::class,'index'])->name('about');
 Route::get('/terms-and-conditions',[TermsController::class,'index'])->name('terms_and_conditions'); 
 Route::get('/photo-gallery',[PhotoController::class,'index'])->name('photo_gallery'); 
 Route::get('/faq',[FaqController::class,'index'])->name('faq');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/post/{id}', [BlogController::class, 'single_post'])->name('post');
+
 Route::get('/privacy-policy',[PrivacyController::class,'index'])->name('privacy_policy');  
 Route::get('/room/{id}',[RoomController::class,'single_room'])->name('room_detail');
 Route::get('/room',[RoomController::class,'index'])->name('room');
@@ -88,7 +94,11 @@ Route::group(['middleware' => ['customer:customer']], function (){
 
 
     Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
-    Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home'); 
+    Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
+
+    Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting');
+    Route::post('/admin/setting/update', [AdminSettingController::class, 'update'])->name('admin_setting_update');
+
     Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
 
     /*Customers */
@@ -98,6 +108,23 @@ Route::group(['middleware' => ['customer:customer']], function (){
     Route::get('/admin/order/view', [AdminOrderController::class, 'index'])->name('admin_order_view');
     Route::get('/admin/order/invoice/{id}', [AdminOrderController::class, 'invoice'])->name('admin_invoice');
     Route::get('/admin/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('admin_order_delete');
+
+
+    /*Testimonials */
+    
+    Route::get('/admin/testimonial/view', [AdminTestimonialController::class, 'index'])->name('admin_testimonial_view');
+    Route::get('/admin/testimonial/add', [AdminTestimonialController::class, 'add'])->name('admin_testimonial_add');
+    Route::post('/admin/testimonial/store', [AdminTestimonialController::class, 'store'])->name('admin_testimonial_store');
+    Route::get('/admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('admin_testimonial_edit');
+    Route::post('/admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('admin_testimonial_update');
+    Route::get('/admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'delete'])->name('admin_testimonial_delete');
+    /*Posts */
+    Route::get('/admin/post/view', [AdminPostController::class, 'index'])->name('admin_post_view');
+    Route::get('/admin/post/add', [AdminPostController::class, 'add'])->name('admin_post_add');
+    Route::post('/admin/post/store', [AdminPostController::class, 'store'])->name('admin_post_store');
+    Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit');
+    Route::post('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('admin_post_update');
+    Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
 
 
 
