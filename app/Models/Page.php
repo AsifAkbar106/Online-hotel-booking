@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'cart_heading', 'cart_status', 'checkout_heading', 'checkout_status', 'payment_heading', 
+        'signup_heading', 'signup_status', 'signin_heading', 'signin_status'
+    ];
 }

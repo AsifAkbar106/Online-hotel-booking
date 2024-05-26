@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookedRoom extends Model
 {
-    use HasFactory;
+    protected $fillable = ['booking_date', 'order_no', 'room_id'];
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
 }

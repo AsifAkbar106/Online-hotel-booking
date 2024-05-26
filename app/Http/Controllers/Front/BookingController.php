@@ -188,7 +188,7 @@ class BookingController extends Controller
 
         return view('front.payment');
     }
-
+/*
     public function paypal($final_price)
     {
         $client = 'AcieZ8zNUm_YhlDUpz_AT3CR0HwRoaxAd_A3k23FOBatq-m_m091NzYUgQD1kaFFta0XFpVgFkpWtXXp';
@@ -320,7 +320,7 @@ class BookingController extends Controller
         }
 
 
-    }
+    }*/
     public function stripe(Request $request,$final_price)
     {
         $stripe_secret_key = 'sk_test_51PAwc2P7QRnEd18GkykjRtD1gs3yIT8ROUhhbKnuJcIUgN4rRCqf5pzyQN5ZLQwLDhjM101ofjoqHvcZAi7HBn3g00Vt3AH8wE';

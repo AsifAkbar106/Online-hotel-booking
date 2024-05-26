@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class RoomPhoto extends Model
 {
-    use HasFactory;
+    protected $fillable = ['room_id', 'photo'];
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
 }

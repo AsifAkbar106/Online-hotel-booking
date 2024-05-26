@@ -101,6 +101,8 @@ Route::group(['middleware' => ['customer:customer']], function (){
     
     Route::post('/admin/setting/update', [AdminSettingController::class, 'update'])->name('admin_setting_update');
 
+    /* Datewise Rooms */
+    
     Route::get('/admin/datewise-rooms', [AdminDatewiseRoomController::class, 'index'])->name('admin_datewise_rooms');
     Route::post('/admin/datewise-rooms/submit', [AdminDatewiseRoomController::class, 'show'])->name('admin_datewise_rooms_submit');
 

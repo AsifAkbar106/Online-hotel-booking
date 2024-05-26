@@ -76,15 +76,11 @@
                 <h4>Make Payment</h4>
                 <select name="payment_method" class="form-control select2" id="paymentMethodChange" autocomplete="off">
                     <option value="">Select Payment Method</option>
-                    <option value="PayPal">PayPal</option>
                     <option value="Stripe">Stripe</option>
                     
                 </select>
 
-                <div class="paypal mt_20">
-                    <h4>Pay with PayPal</h4>
-                    <div id="paypal-button"></div>
-                </div>
+                
                 <div class="stripe mt_20">
                     
                     @php
